@@ -18,6 +18,7 @@ build/
 .eggs/
 *.egg
 .venv/
+.env/
 venv/
 env/
 .Python
@@ -54,3 +55,6 @@ Thumbs.db
 data/
 logs/
 *.log
+
+# --- Claude ---
+.claude
