@@ -1,0 +1,56 @@
+# =============================================================
+# GitHub ETL Demo — .gitignore
+# =============================================================
+
+# --- Environment & Secrets ---
+.env
+*.pem
+*.key
+secrets/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.Python
+
+# --- Testing & Coverage ---
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# --- Type checking ---
+.mypy_cache/
+.ruff_cache/
+
+# --- Dagster ---
+.dagster/
+dagster_home/
+dagster-daemon.pid
+
+# --- Docker ---
+docker/dagster/.docker/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Data / Logs ---
+data/
+logs/
+*.log

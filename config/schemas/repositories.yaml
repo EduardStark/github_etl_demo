@@ -1,0 +1,20 @@
+# GitHub ETL Demo — Per-repository tracking configuration
+#
+# Expected fields:
+#
+# repositories:
+#   - org: org-name
+#     repo: repo-name
+#     track_test_files: true
+#     test_file_patterns:
+#       - "test_*.py"
+#       - "*_test.py"
+#       - "tests/**/*.py"
+#     default_branch: main
+#
+# test_file_defaults:
+#   patterns:
+#     - "test_*.py"
+#     - "*_test.py"
+#     - "spec_*.py"
+#     - "*_spec.py"

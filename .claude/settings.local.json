@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(py_venv/Scripts/python -c \":*)",
+      "Bash(py_venv/Scripts/python scripts/test_transformers.py)",
+      "Bash(py_venv/Scripts/pip install:*)",
+      "Bash(py_venv/Scripts/python scripts/test_load.py)"
+    ]
+  }
+}

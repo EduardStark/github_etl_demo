@@ -1,0 +1,17 @@
+# connectors/github/graphql/queries/reviews.graphql
+#
+# GraphQL query to fetch pull request review threads and review events.
+# Uses cursor-based pagination via the $after variable.
+#
+# Returns per review:
+#   - author login
+#   - state (APPROVED, CHANGES_REQUESTED, COMMENTED, DISMISSED)
+#   - submittedAt
+#   - pull request number (via parent context)
+#
+# Variables:
+#   $owner:     String!  — organization or user name
+#   $repo:      String!  — repository name
+#   $prNumber:  Int!     — pull request number
+#   $first:     Int!     — page size
+#   $after:     String   — pagination cursor

@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "github-etl-demo"
+version = "0.1.0"
+description = "GitHub Enterprise Cloud ETL pipeline demo — Dagster + Polars + PostgreSQL"
+requires-python = ">=3.12"
+dependencies = [
+    # Orchestration
+    "dagster",
+    "dagster-webserver",
+    "dagster-postgres",
+    # GitHub extraction
+    "ghapi",
+    "httpx",
+    # Transformation
+    "polars",
+    # Validation
+    "pandera[polars]",
+    # Database
+    "sqlalchemy",
+    "psycopg2-binary",
+    # Configuration
+    "pyyaml",
+    "python-dotenv",
+    "tzdata",       # Windows: provides IANA timezone data required by Polars + zoneinfo
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "mypy",
+    "pg8000",   # pure-Python Postgres driver used by scripts/init_db.py (avoids libpq on Windows)
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["connectors*", "transformers*", "validators*", "models*", "dagster_etl*"]
+
+[tool.dagster]
+module_name = "dagster_etl"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

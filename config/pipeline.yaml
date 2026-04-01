@@ -1,0 +1,17 @@
+# GitHub ETL Demo — Global pipeline configuration
+#
+# Expected fields:
+#
+# extraction:
+#   batch_size: 100                    # Number of records per API page
+#   max_pages: 50                      # Safety cap on paginated requests
+#   lookback_days: 90                  # How far back to extract PRs on initial run
+#
+# staging:
+#   schema: staging                    # PostgreSQL schema for raw landing tables
+#
+# warehouse:
+#   schema: public                     # PostgreSQL schema for star schema tables
+#
+# logging:
+#   level: INFO                        # Log level: DEBUG, INFO, WARNING, ERROR

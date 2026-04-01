@@ -1,0 +1,16 @@
+# connectors/github/graphql/queries/pull_requests.graphql
+#
+# GraphQL query to fetch pull request metadata for a repository.
+# Uses cursor-based pagination via the $after variable.
+#
+# Returns per PR:
+#   - number, title, state, createdAt, mergedAt, closedAt
+#   - author login
+#   - baseRefName (target branch)
+#   - reviews totalCount
+#
+# Variables:
+#   $owner: String!   — organization or user name
+#   $repo:  String!   — repository name
+#   $first: Int!      — page size (max 100)
+#   $after: String    — pagination cursor (null for first page)

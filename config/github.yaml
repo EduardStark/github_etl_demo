@@ -1,0 +1,26 @@
+# GitHub ETL Demo — GitHub connector configuration
+#
+# Expected fields:
+#
+# app:
+#   app_id: ${GITHUB_APP_ID}           # GitHub App ID (from env)
+#   private_key_path: ${GITHUB_APP_PRIVATE_KEY_PATH}  # Path to .pem file
+#   installation_id: ${GITHUB_APP_INSTALLATION_ID}    # Installation ID for target orgs
+#
+# enterprise:
+#   base_url: ${GITHUB_ENTERPRISE_URL}  # e.g. https://github.example.com/api/v3
+#   graphql_url: ${GITHUB_GRAPHQL_URL}  # e.g. https://github.example.com/api/graphql
+#
+# organizations:
+#   - name: org-name-1
+#     repositories:
+#       - repo-a
+#       - repo-b
+#   - name: org-name-2
+#     repositories:
+#       - repo-c
+#
+# rate_limit:
+#   requests_per_hour: 5000
+#   retry_attempts: 3
+#   retry_backoff_seconds: 60
